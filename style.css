@@ -10,14 +10,14 @@ body {
 }
 
 p {
-    font-family: tahoma;
+    font-family: Tahoma, Helvetica, sans-serif;
     font-size: 20;
 }
 
 h1.title { 
     font-size: 2.5em;
     margin-left: 50px; 
-    font-family: monaco;
+    font-family: monaco, menlo, monospace;
 }
 
 hr { 
@@ -38,7 +38,7 @@ hr {
 }
 
 hr:after {
-    font-family: menlo;
+    font-family: menlo, courier, monospace;
     content: "*";
     display: inline-block;
     position: relative;
@@ -53,7 +53,7 @@ code {
     margin-right: 100px;
     font-size: 0.8em;
     background: #f8f8f8;
-    font-family: menlo;
+    font-family: menlo, courier, monospace;
 }
 
 a {
