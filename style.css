@@ -44,7 +44,7 @@ hr {
 }
 
 hr:after {
-    font-family: menlo, courier, monospace;
+    font-family: menlo, monaco, Consolas, "Lucida Console", monospace;
     content: "*";
     display: inline-block;
     position: relative;
@@ -59,7 +59,7 @@ code {
     margin-right: 100px;
     font-size: 0.8em;
     background: #f8f8f8;
-    font-family: menlo, courier, monospace;
+    font-family: menlo, monaco, Consolas, "Lucida Console", monospace;
     border-radius: 30px;
 }
 
