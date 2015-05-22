@@ -20,6 +20,7 @@
         <codebutton type="button" id="scalabutton" lang="scala">Scala</codebutton>
         <codebutton type="button" id="cbutton">C</codebutton>
         <codebutton type="button" id="javabutton">Java</codebutton>
+        <codebutton type="button" id="pythonbutton">Python</codebutton>
     </div>
     <div id="scalacode"><pre><code class="scala">
     package io.boole.xor.homepage
@@ -419,11 +420,137 @@
       }
     }
     </code></pre></div>
+    <div id="pythoncode"><pre><code class="python">
+    from io.boole.xor.homepage import *
+
+    contacts = {
+
+      <a class="code" href="mailto:xor_boole@mit.edu">email: url('xor_boole@mit.edu'),</a>
+
+      <a class="code" href="https://github.com/drXor">github: url.gh('drXor'),</a>
+
+      irc: ('#think', 'irc.spi.gt')
+
+    }
+
+    projects = {
+
+      'MayhemMultiverse': {
+
+        """
+        A Minecraft multiplayer network with heavy
+        server-side customization.
+        """
+
+        <a class="code" href="http://mayhem-multiverse.com/">url: url('mayhem-multiverse.com'),</a>
+
+        """
+        My position primarially involves developing 
+        infrastructure, design of features, and 
+        communicating with third-party developers.
+        """
+        position: ("Lead Developer", "Founder"),
+
+        skills: [
+          'Java server-side development',
+          'server distribution and communication',
+          'gameplay design'
+        ],
+        """
+        Major infrastructure components I designed
+        """
+        subprojects: [
+          'intra-network RMI using messages',
+          'modified world format for custom storage',
+          'custom in-game GUI framework',
+          'persistent item metadata'
+        ]
+      },
+
+      'Minecraft3DResourcePack': {
+
+        """
+        An asset pack for Minecraft making use
+        of custom 3D models.
+        """
+
+        <a class="code" href="https://github.com/drXor/1.8-Models">url: url.gh('drXor/1.8-Models'),</a>
+
+        skills: [
+         'texture design', 'GIMP',
+         'simple modeling', 'Minecraft JSON model format'
+        ],
+
+        ScalaModelTools: {
+
+          """
+          Command line tools for modifying JSON models
+          created as part of the 1.8-Models project.
+          """
+
+          <a class="code" href="https://github.com/drXor/ScalaModelTools">url: url.gh('drXor/ScalaModelTools'),</a>
+
+          skills: [
+            '3D geometry transformation'
+          ]
+        }
+      },
+
+      'ScalaNBT': {
+
+        """
+        Lightweight Scala library for manipulating NBT
+        (Named Binary Tag) files, with simple syntax
+        """
+
+        <a class="code" href="https://github.com/drXor/ScalaNBT">url = url.gh('drXor/ScalaNBT'),</a>
+
+        skills: [
+          'library design',
+          'NBT manipulation'
+        ]
+      },
+
+      'brainscala': {
+
+        """
+        Scala-based interpreter and compiler for the
+        brainf--k language.
+        """
+
+        <a class="code" href="https://github.com/drXor/brainscala">url: url.gh('drXor/brainscala'),</a>
+
+        skills: [
+          'language parsing',
+          'code generation',
+          'JNI', 'C'
+        ]
+      },
+
+      'Pictures': {
+
+        """
+        School project at MIT that creates
+        "word art" from images and text fetched
+        using Wikipedia's API
+        """
+
+        <a class="code" href="https://github.com/drXor/Pictures">url: url.gh('drXor/Pictures'),</a>
+
+        skills: [
+          'Wikipedia API',
+          'Java Swing',
+          'image processing'
+        ]
+      }
+    }
+    </code></pre></div>
     <script type="text/javascript">
       var langs = [
         'scala',
         'c',
-        'java'
+        'java',
+        'python'
       ];
 
       $(document).ready( function() {
