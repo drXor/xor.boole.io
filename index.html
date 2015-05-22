@@ -2,17 +2,13 @@
 <html>
   <head>
     <title>Xor Boole</title>
-
     <link type="text/css" rel="stylesheet" href="style.css">
-
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/highlight.js/8.6/styles/github.min.css">
     <script src="highlight.pack.js"></script>
-    <script type="text/javascript">
-      hljs.initHighlightingOnLoad();
-    </script>
   </head>
   <body>
-    <h1 class="title">Xor Boole</h1>
+    <h1 class="title">xor.boole.io</h1>
     <p class="intro">
       Hi! My name is Miguel Young. I'm currently an undergrad at the Massachusetts Institute of Technology, 
       studying theoretical mathematics, class of 2018. I'm also interested in computer programming and 
@@ -20,7 +16,12 @@
       Scala. I also contribute to open source projects related to the game Minecraft.
     </p>
     <hr>
-    <pre><code class="scala">
+    <div class="buttons">
+        <codebutton type="button" id="scalabutton" lang="scala">Scala</codebutton>
+        <codebutton type="button" id="cbutton">C</codebutton>
+        <codebutton type="button" id="javabutton">Java</codebutton>
+    </div>
+    <div id="scalacode"><pre><code class="scala">
     package io.boole.xor.homepage
     import homepage.util._
 
@@ -145,7 +146,312 @@
         )
       }
     }
-    </code></pre>
+    </code></pre></div>
+    <div id="ccode"><pre><code class="c">
+    #include "io/boole/xor/homepage.h"
+    
+    Contacts cons = {
+
+        <a class="code" href="mailto:xor_boole@mit.edu">.email = url->new("xor_boole@mit.edu"),</a>
+
+        <a class="code" href="https://github.com/drXor">.github = url->gh("drXor"),</a>
+
+        .irc = { "#think", "irc.spi.gt" }
+    };
+
+    Project projects[] = {
+
+        (Project) {
+            /* A Minecraft multiplayer network 
+             with heavy server-side customization. */
+            .name = "Mayhem Multiverse",
+
+            <a class="code" href="http://mayhem-multiverse.com/">.url = url->new("mayhem-multiverse.com"),</a>
+
+            /* My position primarially involves developing 
+             infrastructure, design of features, and 
+             communicating with third-party developers. */
+            .position = { "Lead Developer", "Founder" },
+
+            .skills = {
+                "Java server-side development",
+                "server distribution and communication",
+                "gameplay design"
+            },
+
+            /* Major infrastructure components I designed */
+            .subprojects = {
+                "intra-network RMI using messages",
+                "modified world format for custom storage",
+                "custom in-game GUI framework",
+                "persistent item metadata"
+            }
+        },
+
+        (Project) {
+            /* An asset pack for Minecraft making use
+             of custom 3D models. */
+            .name = "Minecraft 3D Resource Pack",
+
+            <a class="code" href="https://github.com/drXor/1.8-Models">.url = url->gh("drXor/1.8-Models"),</a>
+
+            .skills = {
+                "texture design", "GIMP",
+                "simple modeling", "Minecraft JSON model format"
+            },
+
+            .subprojects = {
+                (Project) {
+                    /* Command line tools for modifying JSON models
+                     created as part of the 1.8-Models project. */
+                    .name = "ScalaModelTools",
+
+                    <a class="code" href="https://github.com/drXor/ScalaModelTools">.url = url->gh("drXor/ScalaModelTools"),</a>
+
+                    .skills = { "3D geometry transformation" }
+                }
+            }
+        },
+
+        (Project) {
+            /* Lightweight Scala library for manipulating NBT
+             (Named Binary Tag) files, with simple syntax */
+            .name = "ScalaNBT",
+
+            <a class="code" href="https://github.com/drXor/ScalaNBT">.url = url->gh("drXor/ScalaNBT"),</a>
+
+            .skills = {
+                "library design",
+                "NBT manipulation"
+            }
+        },
+
+        (Project) {
+            /* Scala-based interpreter and compiler for 
+             the brainf--k language. */
+            .name = "brainscala",
+
+            <a class="code" href="https://github.com/drXor/brainscala">.url = url->gh("drXor/brainscala"),</a>
+
+            .skills = {
+                "language parsing",
+                "code generation",
+                "JNI", "C"
+            }
+        },
+
+        (Project) {
+
+            /* School project at MIT that creates "word art" 
+             from images and text fetched using Wikipedia's API */
+
+            .name = "Pictures",
+
+            <a class="code" href="https://github.com/drXor/Pictures">.url = url->gh("drXor/Pictures"),</a>
+
+            .skills = {
+                "Wikipedia API",
+                "Java Swing",
+                "image processing"
+            }
+        }
+    };
+    </code></pre></div>
+    <div id="javacode"><pre><code class="java">
+    package io.boole.xor.homepage;
+    import static io.boole.xor.homepage.Util.*;
+    import java.net.URL;
+
+    public final class Homepage {
+
+      public static final class Contacts {
+
+        <a class="code" href="mailto:xor_boole@mit.edu">public static final URL email = new URL("xor_boole@mit.edu");</a>
+
+        <a class="code" href="https://github.com/drXor">public final static URL github = github("drXor");</a>
+
+        public final static String[] irc = { "#think", "irc.spi.gt" };
+
+      }
+
+      public static final class Projects {
+
+        public static final class MayhemMultiverse implements Project {
+
+          /**
+           *  A Minecraft multiplayer network with heavy
+           *  server-side customization.
+           */
+
+          @Override
+          public static URL getURL() throws Exception {
+            <a class="code" href="http://mayhem-multiverse.com/">return new URL("mayhem-multiverse.com");</a>
+          } 
+          /**
+           *  My position primarially involves developing 
+           *  infrastructure, design of features, and 
+           *  communicating with third-party developers.
+           */
+          public static final String[] position = { "Lead Developer", "Founder" };
+
+          @Override 
+          public static String[] getSkills() { 
+            return new String[] {
+              "Java server-side development",
+              "server distribution and communication",
+              "gameplay design"
+            };
+          }
+          /**
+           * Major infrastructure components I designed
+           */
+          public static final String[] subprojects = {
+            "intra-network RMI using messages",
+            "modified world format for custom storage",
+            "custom in-game GUI framework",
+            "persistent item metadata"
+          };
+        }
+
+        public static final class Minecraft3DResourcePack implements Project {
+
+          /**
+           *  An asset pack for Minecraft making use
+           *  of custom 3D models.
+           */
+
+          @Override
+          public static URL getURL() throws Exception {
+            <a class="code" href="https://github.com/drXor/1.8-Models">return github("drXor/1.8-Models");</a>
+          }
+
+          @Override 
+          public static String[] getSkills() {  
+            return new String[] {
+              "texture design", "GIMP",
+              "simple modeling", "Minecraft JSON model format"
+            };
+          }
+
+          public static final class ScalaModelTools implements Project {
+
+            /**
+             *  Command line tools for modifying JSON models
+             *  created as part of the 1.8-Models project.
+             */
+
+            @Override
+            public static URL getURL() throws Exception {
+              <a class="code" href="https://github.com/drXor/ScalaNBT">return github("drXor/ScalaNBT");</a>
+            }
+
+            @Override 
+            public static String[] getSkills() {  
+              return new String[] { "3D geometry transformation" };
+            }
+          }
+        }
+
+        public static final class ScalaNBT implements Project {
+
+          /**
+           *  Lightweight Scala library for manipulating NBT
+           *  (Named Binary Tag) files, with simple syntax
+           */
+
+          @Override
+          public static URL getURL() throws Exception {
+            <a class="code" href="https://github.com/drXor/ScalaNBT">return github("drXor/ScalaNBT");</a>
+          }
+
+          @Override 
+          public static String[] getSkills() {  
+            return new String[] { 
+              "library design",
+              "NBT manipulation"
+            };
+          }
+        }
+
+        public static final class brainscala implements Project {
+
+          /**
+           *  Scala-based interpreter and compiler for the
+           *  brainf--k language.
+           */
+
+          @Override
+          public static URL getURL() throws Exception {
+            <a class="code" href="https://github.com/drXor/brainscala">return github("drXor/brainscala");</a>
+          }
+
+          @Override 
+          public static String[] getSkills() {  
+            return new String[] { 
+              "language parsing",
+              "code generation",
+              "JNI", "C"
+            };
+          }
+        }
+
+        public static final class Pictures implements Project {
+
+          /**
+           *  Scala-based interpreter and compiler for the
+           *  brainf--k language.
+           */
+
+          @Override
+          public static URL getURL() throws Exception {
+            <a class="code" href="https://github.com/drXor/Pictures">return github("drXor/Pictures");</a>
+          }
+
+          @Override 
+          public static String[] getSkills() {  
+            return new String[] { 
+              "Wikipedia API",
+              "Java Swing",
+              "image processing"
+            };
+          }
+        }
+      }
+    }
+    </code></pre></div>
+    <script type="text/javascript">
+      var langs = [
+        'scala',
+        'c',
+        'java'
+      ];
+
+      $(document).ready( function() {
+
+        function doHigh() {
+          $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+          });
+        }
+
+        function handleCode(e) {
+          var button = e.target.tagName.toLowerCase() === 'codebutton' ? e.target : e.target.parentElement;
+          var lang = button.id.toLowerCase().match(/.+?(?=button)/)[0];
+          langs.filter( function(l) { return l !== lang } ).forEach( function(otherlang) {
+            $('#' + otherlang + 'code')[0].style.display = 'none';
+          })
+          $('#' + lang + 'code')[0].style.display = 'block';
+        }
+
+        doHigh();
+
+        langs.slice(1).forEach( function(otherlang) {
+          $('#' + otherlang + 'code')[0].style.display = 'none';
+        })
+
+        $('codebutton').click( handleCode );
+      });
+    </script>
     <hr>
     <center><img src="headbw.png" align="middle" height="100" width="100" /></center>
   </body>
