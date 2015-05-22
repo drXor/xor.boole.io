@@ -13,25 +13,138 @@
   </head>
   <body>
     <h1 class="title">Xor Boole</h1>
-    <center><p>
+    <p class="intro">
       Hi! My name is Miguel Young. I'm currently an undergrad at the Massachusetts Institute of Technology, 
-      studying theoretical mathematics, class of 2018.
-    </p></center>
+      studying theoretical mathematics, class of 2018. I'm also interested in computer programming and 
+      server administration, and enjoy experimenting with language design/extension, particularly in
+      Scala. I also contribute to open source projects related to the game Minecraft.
+    </p>
     <hr>
     <pre><code class="scala">
-    package io.boole
+    package io.boole.xor.homepage
+    import homepage.util._
 
-    object contacts {
+    object Contacts {
 
-      <a href="mailto:xor_boole@mit.edu">val email = "xor_boole@mit.edu"</a>
+      <a class="code" href="mailto:xor_boole@mit.edu">val email = "xor_boole@mit.edu".url</a>
 
-      <a href="https://github.com/drXor">val github = "drXor"</a>
+      <a class="code" href="https://github.com/drXor">val github = "drXor".github</a>
 
       val irc = "#think" -> "irc.spi.gt"
 
     }
 
-    // TODO: add more personal details
+    package projects {
+
+      object MayhemMultiverse extends Project {
+
+        /**
+         *  A Minecraft multiplayer network with heavy
+         *  server-side customization.
+         */
+
+        <a class="code" href="http://mayhem-multiverse.com/">val url = "mayhem-multiverse.com".url</a>
+
+        /**
+         *  My position primarially involves developing 
+         *  infrastructure, design of features, and 
+         *  communicating with third-party developers.
+         */
+        val position = "Lead Developer" &amp; "Founder"
+
+        val skills = List(
+          "Java server-side development",
+          "server distribution and communication",
+          "gameplay design"
+        )
+        /**
+         * Major infrastructure components I designed
+         */
+        val subprojects = List(
+          "intra-network RMI using messages",
+          "modified world format for custom storage",
+          "custom in-game GUI framework",
+          "persistent item metadata"
+        )
+      }
+
+      object Minecraft3DResourcePack extends Project {
+
+        /**
+         *  An asset pack for Minecraft making use
+         *  of custom 3D models.
+         */
+
+        <a class="code" href="https://github.com/drXor/1.8-Models">val url = "drXor/1.8-Models".github</a>
+
+        val skills = List(
+         "texture design" using "GIMP",
+         "simple modeling" using "Minecraft JSON model format"
+        )
+
+        object ScalaModelTools extends Project {
+
+          /**
+           *  Command line tools for modifying JSON models
+           *  created as part of the 1.8-Models project.
+           */
+
+          <a class="code" href="https://github.com/drXor/ScalaModelTools">val url = "drXor/ScalaModelTools".github</a>
+
+          val skills = List(
+            "3D geometry transformation"
+          )
+        }
+      }
+
+      object ScalaNBT extends Project {
+
+        /**
+         *  Lightweight Scala library for manipulating NBT
+         *  (Named Binary Tag) files, with simple syntax
+         */
+
+        <a class="code" href="https://github.com/drXor/ScalaNBT">val url = "drXor/ScalaNBT".github</a>
+
+        val skills = List(
+          "library design",
+          "NBT manipulation"
+        )
+      }
+
+      object brainscala extends Project {
+
+        /**
+         *  Scala-based interpreter and compiler for the
+         *  brainf--k language.
+         */
+
+        <a class="code" href="https://github.com/drXor/brainscala">val url = "drXor/brainscala".github</a>
+
+        val skills = List(
+          "language parsing",
+          "code generation",
+          "JNI", "C"
+        )
+      }
+
+      object Pictures extends Project {
+
+        /**
+         *  School project at MIT that creates
+         *  "word art" from images and text fetched
+         *  using Wikipedia's API
+         */
+
+        <a class="code" href="https://github.com/drXor/Pictures">val url = "drXor/Pictures".github</a>
+
+        val skills = List(
+          "Wikipedia API",
+          "Java Swing",
+          "image processing"
+        )
+      }
+    }
     </code></pre>
     <hr>
     <center><img src="headbw.png" align="middle" height="100" width="100" /></center>

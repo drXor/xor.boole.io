@@ -14,6 +14,12 @@ p {
     font-size: 20;
 }
 
+p.intro {
+    text-align: justify;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 h1.title { 
     font-size: 2.5em;
     margin-left: 50px; 
@@ -54,8 +60,15 @@ code {
     font-size: 0.8em;
     background: #f8f8f8;
     font-family: menlo, courier, monospace;
+    border-radius: 30px;
 }
 
-a {
+a.code {
     text-decoration: none;
+    color: #000000;
+}
+
+a:hover.code {
+    text-decoration: underline;
+    color: 
 }
