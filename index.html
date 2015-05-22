@@ -10,7 +10,7 @@
   <body>
     <h1 class="title">xor.boole.io</h1>
     <p class="intro">
-      Hi! My name is Miguel Young. I'm currently an undergrad at the Massachusetts Institute of Technology, 
+      Hi! My name is Miguel Young. I'm currently an undergrad at the <a href="http://mit.edu">Massachusetts Institute of Technology</a>, 
       studying theoretical mathematics, class of 2018. I'm also interested in computer programming and 
       server administration, and enjoy experimenting with language design/extension, particularly in
       Scala. I also contribute to open source projects related to the game Minecraft.
@@ -421,15 +421,17 @@
     }
     </code></pre></div>
     <div id="pythoncode"><pre><code class="python">
+    # from io.boole.xor import __the_whole_site__
+
     from io.boole.xor.homepage import *
 
     contacts = {
 
-      <a class="code" href="mailto:xor_boole@mit.edu">email: url('xor_boole@mit.edu'),</a>
+      <a class="code" href="mailto:xor_boole@mit.edu">'email': url('xor_boole@mit.edu'),</a>
 
-      <a class="code" href="https://github.com/drXor">github: url.gh('drXor'),</a>
+      <a class="code" href="https://github.com/drXor">'github': url.gh('drXor'),</a>
 
-      irc: ('#think', 'irc.spi.gt')
+      'irc': ('#think', 'irc.spi.gt')
 
     }
 
@@ -490,9 +492,7 @@
 
           <a class="code" href="https://github.com/drXor/ScalaModelTools">url: url.gh('drXor/ScalaModelTools'),</a>
 
-          skills: [
-            '3D geometry transformation'
-          ]
+          skills: [ '3D geometry transformation' ]
         }
       },
 

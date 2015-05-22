@@ -16,15 +16,16 @@ p {
 
 p.intro {
     text-align: justify;
-    margin-left: 20px;
-    margin-right: 20px;
-    line-height: 1.5em;
+    margin-left: 200px;
+    margin-right: 200px;
+    line-height: 2em;
 }
 
 h1.title { 
     font-size: 2.5em;
-    margin-left: 50px; 
+    text-align: center;
     font-family: monaco, menlo, monospace;
+    padding-right: 450px;
 }
 
 hr { 
@@ -64,12 +65,12 @@ code {
     border-radius: 30px;
 }
 
-a.code {
+a {
     text-decoration: none;
     color: #000000;
 }
 
-a:hover.code {
+a:hover {
     text-decoration: underline;
 }
 
@@ -79,9 +80,11 @@ div.buttons {
 }
 
 codebutton {
+
     -webkit-border-radius: 4;
     -moz-border-radius: 4;
     border-radius: 4px;
+    cursor: pointer;
     font-family: Arial;
     color: #ffffff;
     font-size: 16px;
