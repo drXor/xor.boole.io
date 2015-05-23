@@ -14,18 +14,18 @@ p {
     font-size: 20;
 }
 
-p.intro {
+div.intro {
     text-align: justify;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 15em;
+    margin-right: 15em;
     line-height: 2em;
+    margin-bottom: 0em;
 }
 
 h1.title { 
     font-size: 2.5em;
     text-align: center;
     font-family: monaco, menlo, monospace;
-    padding-right: 450px;
 }
 
 hr { 
@@ -45,16 +45,6 @@ hr {
     margin-right: -10px;
 }
 
-/*hr:after {
-    font-family: menlo, monaco, Consolas, "Lucida Console", monospace;
-    content: "*";
-    display: inline-block;
-    position: relative;
-    top: -0.57em;
-    font-size: 1.3em;
-    padding: 0 0.25em;
-}*/
-
 code {
     margin: 50px;
     margin-left: 100px;
@@ -63,6 +53,8 @@ code {
     background: #f8f8f8;
     font-family: menlo, monaco, Consolas, "Lucida Console", monospace;
     border-radius: 30px;
+    -webkit-border-radius: 30;
+    -moz-border-radius: 30;
 }
 
 a {
@@ -74,7 +66,7 @@ a:hover {
     text-decoration: underline;
 }
 
-div.buttons {
+div#buttons {
     text-align: center;
     margin-bottom: -60px;
 }

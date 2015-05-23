@@ -8,576 +8,67 @@
     <script src="highlight.pack.js"></script>
   </head>
   <body>
-    <h1 class="title">xor.boole.io</h1>
-    <p class="intro">
-      Hi! My name is Miguel Young. I'm currently an undergrad at the <a href="http://mit.edu">Massachusetts Institute of Technology</a>, 
-      studying theoretical mathematics, class of 2018. I'm also interested in computer programming and 
-      server administration, and enjoy experimenting with language design/extension, particularly in
-      Scala. I also contribute to open source projects related to the game Minecraft.
-    </p>
-    <hr>
-    <div class="buttons">
-        <codebutton type="button" id="scalabutton" lang="scala">Scala</codebutton>
-        <codebutton type="button" id="cbutton">C</codebutton>
-        <codebutton type="button" id="javabutton">Java</codebutton>
-        <codebutton type="button" id="pythonbutton">Python</codebutton>
+    <div class="intro">
+      <h1 class="title">xor.boole.io</h1>
+      <p class="intro">
+        Hi! My name is Miguel Young. I'm currently an undergrad at the <a href="http://mit.edu">Massachusetts Institute of Technology</a>, 
+        studying theoretical mathematics, class of 2018. I'm also interested in computer programming and 
+        server administration, and enjoy experimenting with language design/extension, particularly in
+        Scala. I also contribute to open source projects related to the game Minecraft.
+      </p>
     </div>
-    <div id="scalacode"><pre><code class="scala">
-    package io.boole.xor.homepage
-    import homepage.util._
-
-    object Contacts {
-
-      <a class="code" href="mailto:xor_boole@mit.edu">val email = "xor_boole@mit.edu".url</a>
-
-      <a class="code" href="https://github.com/drXor">val github = "drXor".github</a>
-
-      val irc = "#think" -> "irc.spi.gt"
-
-    }
-
-    package projects {
-
-      object MayhemMultiverse extends Project {
-
-        /**
-         *  A Minecraft multiplayer network with heavy
-         *  server-side customization.
-         */
-
-        <a class="code" href="http://mayhem-multiverse.com/">val url = "mayhem-multiverse.com".url</a>
-
-        /**
-         *  My position primarially involves developing 
-         *  infrastructure, design of features, and 
-         *  communicating with third-party developers.
-         */
-        val position = "Lead Developer" &amp; "Founder"
-
-        val skills = List(
-          "Java server-side development",
-          "server distribution and communication",
-          "gameplay design"
-        )
-        /**
-         * Major infrastructure components I designed
-         */
-        val subprojects = List(
-          "intra-network RMI using messages",
-          "modified world format for custom storage",
-          "custom in-game GUI framework",
-          "persistent item metadata"
-        )
-      }
-
-      object Minecraft3DResourcePack extends Project {
-
-        /**
-         *  An asset pack for Minecraft making use
-         *  of custom 3D models.
-         */
-
-        <a class="code" href="https://github.com/drXor/1.8-Models">val url = "drXor/1.8-Models".github</a>
-
-        val skills = List(
-         "texture design" using "GIMP",
-         "simple modeling" using "Minecraft JSON model format"
-        )
-
-        object ScalaModelTools extends Project {
-
-          /**
-           *  Command line tools for modifying JSON models
-           *  created as part of the 1.8-Models project.
-           */
-
-          <a class="code" href="https://github.com/drXor/ScalaModelTools">val url = "drXor/ScalaModelTools".github</a>
-
-          val skills = List(
-            "3D geometry transformation"
-          )
-        }
-      }
-
-      object ScalaNBT extends Project {
-
-        /**
-         *  Lightweight Scala library for manipulating NBT
-         *  (Named Binary Tag) files, with simple syntax
-         */
-
-        <a class="code" href="https://github.com/drXor/ScalaNBT">val url = "drXor/ScalaNBT".github</a>
-
-        val skills = List(
-          "library design",
-          "NBT manipulation"
-        )
-      }
-
-      object brainscala extends Project {
-
-        /**
-         *  Scala-based interpreter and compiler for the
-         *  brainf--k language.
-         */
-
-        <a class="code" href="https://github.com/drXor/brainscala">val url = "drXor/brainscala".github</a>
-
-        val skills = List(
-          "language parsing",
-          "code generation",
-          "JNI", "C"
-        )
-      }
-
-      object Pictures extends Project {
-
-        /**
-         *  School project at MIT that creates
-         *  "word art" from images and text fetched
-         *  using Wikipedia's API
-         */
-
-        <a class="code" href="https://github.com/drXor/Pictures">val url = "drXor/Pictures".github</a>
-
-        val skills = List(
-          "Wikipedia API",
-          "Java Swing",
-          "image processing"
-        )
-      }
-    }
-    </code></pre></div>
-    <div id="ccode"><pre><code class="c">
-    #include "io/boole/xor/homepage.h"
-    
-    Contacts cons = {
-
-        <a class="code" href="mailto:xor_boole@mit.edu">.email = url->new("xor_boole@mit.edu"),</a>
-
-        <a class="code" href="https://github.com/drXor">.github = url->gh("drXor"),</a>
-
-        .irc = { "#think", "irc.spi.gt" }
-    };
-
-    Project projects[] = {
-
-        (Project) {
-            /* A Minecraft multiplayer network 
-             with heavy server-side customization. */
-            .name = "Mayhem Multiverse",
-
-            <a class="code" href="http://mayhem-multiverse.com/">.url = url->new("mayhem-multiverse.com"),</a>
-
-            /* My position primarially involves developing 
-             infrastructure, design of features, and 
-             communicating with third-party developers. */
-            .position = { "Lead Developer", "Founder" },
-
-            .skills = {
-                "Java server-side development",
-                "server distribution and communication",
-                "gameplay design"
-            },
-
-            /* Major infrastructure components I designed */
-            .subprojects = {
-                "intra-network RMI using messages",
-                "modified world format for custom storage",
-                "custom in-game GUI framework",
-                "persistent item metadata"
-            }
-        },
-
-        (Project) {
-            /* An asset pack for Minecraft making use
-             of custom 3D models. */
-            .name = "Minecraft 3D Resource Pack",
-
-            <a class="code" href="https://github.com/drXor/1.8-Models">.url = url->gh("drXor/1.8-Models"),</a>
-
-            .skills = {
-                "texture design", "GIMP",
-                "simple modeling", "Minecraft JSON model format"
-            },
-
-            .subprojects = {
-                (Project) {
-                    /* Command line tools for modifying JSON models
-                     created as part of the 1.8-Models project. */
-                    .name = "ScalaModelTools",
-
-                    <a class="code" href="https://github.com/drXor/ScalaModelTools">.url = url->gh("drXor/ScalaModelTools"),</a>
-
-                    .skills = { "3D geometry transformation" }
-                }
-            }
-        },
-
-        (Project) {
-            /* Lightweight Scala library for manipulating NBT
-             (Named Binary Tag) files, with simple syntax */
-            .name = "ScalaNBT",
-
-            <a class="code" href="https://github.com/drXor/ScalaNBT">.url = url->gh("drXor/ScalaNBT"),</a>
-
-            .skills = {
-                "library design",
-                "NBT manipulation"
-            }
-        },
-
-        (Project) {
-            /* Scala-based interpreter and compiler for 
-             the brainf--k language. */
-            .name = "brainscala",
-
-            <a class="code" href="https://github.com/drXor/brainscala">.url = url->gh("drXor/brainscala"),</a>
-
-            .skills = {
-                "language parsing",
-                "code generation",
-                "JNI", "C"
-            }
-        },
-
-        (Project) {
-
-            /* School project at MIT that creates "word art" 
-             from images and text fetched using Wikipedia's API */
-
-            .name = "Pictures",
-
-            <a class="code" href="https://github.com/drXor/Pictures">.url = url->gh("drXor/Pictures"),</a>
-
-            .skills = {
-                "Wikipedia API",
-                "Java Swing",
-                "image processing"
-            }
-        }
-    };
-    </code></pre></div>
-    <div id="javacode"><pre><code class="java">
-    package io.boole.xor.homepage;
-    import static io.boole.xor.homepage.Util.*;
-    import java.net.URL;
-
-    public final class Homepage {
-
-      public static final class Contacts {
-
-        <a class="code" href="mailto:xor_boole@mit.edu">public static final URL email = new URL("xor_boole@mit.edu");</a>
-
-        <a class="code" href="https://github.com/drXor">public final static URL github = github("drXor");</a>
-
-        public final static String[] irc = { "#think", "irc.spi.gt" };
-
-      }
-
-      public static final class Projects {
-
-        public static final class MayhemMultiverse implements Project {
-
-          /**
-           *  A Minecraft multiplayer network with heavy
-           *  server-side customization.
-           */
-
-          @Override
-          public static URL getURL() throws Exception {
-            <a class="code" href="http://mayhem-multiverse.com/">return new URL("mayhem-multiverse.com");</a>
-          } 
-          /**
-           *  My position primarially involves developing 
-           *  infrastructure, design of features, and 
-           *  communicating with third-party developers.
-           */
-          public static final String[] position = { "Lead Developer", "Founder" };
-
-          @Override 
-          public static String[] getSkills() { 
-            return new String[] {
-              "Java server-side development",
-              "server distribution and communication",
-              "gameplay design"
-            };
-          }
-          /**
-           * Major infrastructure components I designed
-           */
-          public static final String[] subprojects = {
-            "intra-network RMI using messages",
-            "modified world format for custom storage",
-            "custom in-game GUI framework",
-            "persistent item metadata"
-          };
-        }
-
-        public static final class Minecraft3DResourcePack implements Project {
-
-          /**
-           *  An asset pack for Minecraft making use
-           *  of custom 3D models.
-           */
-
-          @Override
-          public static URL getURL() throws Exception {
-            <a class="code" href="https://github.com/drXor/1.8-Models">return github("drXor/1.8-Models");</a>
-          }
-
-          @Override 
-          public static String[] getSkills() {  
-            return new String[] {
-              "texture design", "GIMP",
-              "simple modeling", "Minecraft JSON model format"
-            };
-          }
-
-          public static final class ScalaModelTools implements Project {
-
-            /**
-             *  Command line tools for modifying JSON models
-             *  created as part of the 1.8-Models project.
-             */
-
-            @Override
-            public static URL getURL() throws Exception {
-              <a class="code" href="https://github.com/drXor/ScalaNBT">return github("drXor/ScalaNBT");</a>
-            }
-
-            @Override 
-            public static String[] getSkills() {  
-              return new String[] { "3D geometry transformation" };
-            }
-          }
-        }
-
-        public static final class ScalaNBT implements Project {
-
-          /**
-           *  Lightweight Scala library for manipulating NBT
-           *  (Named Binary Tag) files, with simple syntax
-           */
-
-          @Override
-          public static URL getURL() throws Exception {
-            <a class="code" href="https://github.com/drXor/ScalaNBT">return github("drXor/ScalaNBT");</a>
-          }
-
-          @Override 
-          public static String[] getSkills() {  
-            return new String[] { 
-              "library design",
-              "NBT manipulation"
-            };
-          }
-        }
-
-        public static final class brainscala implements Project {
-
-          /**
-           *  Scala-based interpreter and compiler for the
-           *  brainf--k language.
-           */
-
-          @Override
-          public static URL getURL() throws Exception {
-            <a class="code" href="https://github.com/drXor/brainscala">return github("drXor/brainscala");</a>
-          }
-
-          @Override 
-          public static String[] getSkills() {  
-            return new String[] { 
-              "language parsing",
-              "code generation",
-              "JNI", "C"
-            };
-          }
-        }
-
-        public static final class Pictures implements Project {
-
-          /**
-           *  Scala-based interpreter and compiler for the
-           *  brainf--k language.
-           */
-
-          @Override
-          public static URL getURL() throws Exception {
-            <a class="code" href="https://github.com/drXor/Pictures">return github("drXor/Pictures");</a>
-          }
-
-          @Override 
-          public static String[] getSkills() {  
-            return new String[] { 
-              "Wikipedia API",
-              "Java Swing",
-              "image processing"
-            };
-          }
-        }
-      }
-    }
-    </code></pre></div>
-    <div id="pythoncode"><pre><code class="python">
-    # from io.boole.xor import __the_whole_site__
-
-    from io.boole.xor.homepage import *
-
-    contacts = {
-
-      <a class="code" href="mailto:xor_boole@mit.edu">'email': url('xor_boole@mit.edu'),</a>
-
-      <a class="code" href="https://github.com/drXor">'github': url.gh('drXor'),</a>
-
-      'irc': ('#think', 'irc.spi.gt')
-
-    }
-
-    projects = {
-
-      'MayhemMultiverse': {
-
-        """
-        A Minecraft multiplayer network with heavy
-        server-side customization.
-        """
-
-        <a class="code" href="http://mayhem-multiverse.com/">url: url('mayhem-multiverse.com'),</a>
-
-        """
-        My position primarially involves developing 
-        infrastructure, design of features, and 
-        communicating with third-party developers.
-        """
-        position: ("Lead Developer", "Founder"),
-
-        skills: [
-          'Java server-side development',
-          'server distribution and communication',
-          'gameplay design'
-        ],
-        """
-        Major infrastructure components I designed
-        """
-        subprojects: [
-          'intra-network RMI using messages',
-          'modified world format for custom storage',
-          'custom in-game GUI framework',
-          'persistent item metadata'
-        ]
-      },
-
-      'Minecraft3DResourcePack': {
-
-        """
-        An asset pack for Minecraft making use
-        of custom 3D models.
-        """
-
-        <a class="code" href="https://github.com/drXor/1.8-Models">url: url.gh('drXor/1.8-Models'),</a>
-
-        skills: [
-         'texture design', 'GIMP',
-         'simple modeling', 'Minecraft JSON model format'
-        ],
-
-        ScalaModelTools: {
-
-          """
-          Command line tools for modifying JSON models
-          created as part of the 1.8-Models project.
-          """
-
-          <a class="code" href="https://github.com/drXor/ScalaModelTools">url: url.gh('drXor/ScalaModelTools'),</a>
-
-          skills: [ '3D geometry transformation' ]
-        }
-      },
-
-      'ScalaNBT': {
-
-        """
-        Lightweight Scala library for manipulating NBT
-        (Named Binary Tag) files, with simple syntax
-        """
-
-        <a class="code" href="https://github.com/drXor/ScalaNBT">url = url.gh('drXor/ScalaNBT'),</a>
-
-        skills: [
-          'library design',
-          'NBT manipulation'
-        ]
-      },
-
-      'brainscala': {
-
-        """
-        Scala-based interpreter and compiler for the
-        brainf--k language.
-        """
-
-        <a class="code" href="https://github.com/drXor/brainscala">url: url.gh('drXor/brainscala'),</a>
-
-        skills: [
-          'language parsing',
-          'code generation',
-          'JNI', 'C'
-        ]
-      },
-
-      'Pictures': {
-
-        """
-        School project at MIT that creates
-        "word art" from images and text fetched
-        using Wikipedia's API
-        """
-
-        <a class="code" href="https://github.com/drXor/Pictures">url: url.gh('drXor/Pictures'),</a>
-
-        skills: [
-          'Wikipedia API',
-          'Java Swing',
-          'image processing'
-        ]
-      }
-    }
-    </code></pre></div>
+    <hr>
+    <div id="buttons"></div>
     <script type="text/javascript">
-      var langs = [
-        'scala',
-        'c',
-        'java',
-        'python'
-      ];
+      var langs = {
+        scala:  'scala',
+        c:      'c',
+        java:   'java',
+        python: 'py'
+      };
 
-      $(document).ready( function() {
+      var codes = {};
 
-        function doHigh() {
-          $('pre code').each(function(i, block) {
-            hljs.highlightBlock(block);
-          });
+      $(function() {
+        for(key in langs) {
+          var request = {
+            lang: key,
+            url: 'snippets/xor.' + langs[key],
+            type: 'get',
+            async: 'false',
+            success: function(s) {
+              console.log(this.lang)
+              var src = s;
+              src = src
+                .replace(/(\n[ ]*)(.+["'](.+?@.+?\..+?)["'].+)([ ]*\n)/g, '$1<a href="mailto:$3">$2</a>$4')
+                .replace(/(\n[ ]*)(.+["']((?!irc)[a-zA-Z0-9\-]+?\..+?)["'].+)([ ]*\n)/g,  '$1<a href="http://$3">$2</a>$4')
+                .replace(/(\n[ ]*)(.+["'](drXor\/?.*?)["'].+)([ ]*\n)/g,   '$1<a href="http://github.com/$3">$2</a>$4')
+              src = src.split('\n').map(function(s){return s ? '    ' + s : s}).join('\n');
+              src = '\n\n' + src + '\n\n\n';
+              codes[key] = src;
+              var button = $('<codebutton>', {type: 'button', id: this.lang + 'button', text: this.lang[0].toUpperCase() + this.lang.slice(1)});
+              var code = $('<code>', {'class': this.lang }).append(src)
+              var precode = $('<pre>', { id: this.lang + 'code' }).append(code)
+
+              if(this.lang !== 'scala') precode[0].style.display = 'none'
+              button.click(handleCode)
+              code.each(function(i, block) { hljs.highlightBlock(block); })
+              $('#buttons').append(button).append('\n').after(precode).append('\n');
+            }
+
+          };
+          $.ajax(request);
         }
+      });
 
-        function handleCode(e) {
-          var button = e.target.tagName.toLowerCase() === 'codebutton' ? e.target : e.target.parentElement;
-          var lang = button.id.toLowerCase().match(/.+?(?=button)/)[0];
-          langs.filter( function(l) { return l !== lang } ).forEach( function(otherlang) {
-            $('#' + otherlang + 'code')[0].style.display = 'none';
-          })
-          $('#' + lang + 'code')[0].style.display = 'block';
-        }
-
-        doHigh();
-
-        langs.slice(1).forEach( function(otherlang) {
+      function handleCode(e) {
+        var button = e.target.tagName.toLowerCase() === 'codebutton' ? e.target : e.target.parentElement;
+        var lang = button.id.toLowerCase().match(/.+?(?=button)/)[0];
+        Object.keys(langs).filter( function(l) { return l !== lang } ).forEach( function(otherlang) {
           $('#' + otherlang + 'code')[0].style.display = 'none';
         })
-
-        $('codebutton').click( handleCode );
-      });
+        $('#' + lang + 'code')[0].style.display = 'block';
+      }
     </script>
     <hr>
     <center><img src="headbw.png" align="middle" height="100" width="100" /></center>
