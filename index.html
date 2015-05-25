@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Xor Boole</title>
+    <link rel="shortcut icon" href="http://xor.boole.io/headbw.png"></link>
     <link type="text/css" rel="stylesheet" href="style.css">
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/highlight.js/8.6/styles/github.min.css">
@@ -21,10 +22,13 @@
     <div id="buttons"></div>
     <script type="text/javascript">
       var langs = {
-        scala:  'scala',
-        c:      'c',
-        java:   'java',
-        python: 'py'
+        scala:       'scala',
+        c:           'c',
+        java:        'java',
+        python:      'py',
+        go:          'go',
+        kotlin:      'kt'
+        //'brainf--k': 'bf'
       };
 
       var codes = {};
@@ -33,7 +37,7 @@
         for(key in langs) {
           var request = {
             lang: key,
-            url: 'snippets/xor.' + langs[key],
+            url: 'http://xor.boole.io/snippets/xor.' + langs[key],
             type: 'get',
             async: 'false',
             success: function(s) {
@@ -71,6 +75,6 @@
       }
     </script>
     <hr>
-    <center><img src="headbw.png" align="middle" height="100" width="100" /></center>
+    <center><img src="headbw.png" align="middle"/></center>
   </body>
 </html>

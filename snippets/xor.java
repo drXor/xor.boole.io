@@ -1,17 +1,21 @@
 package io.boole.xor.homepage;
 import static io.boole.xor.homepage.Util.*;
 import java.net.URL;
+import java.util.*;
 
 public final class Homepage {
 
-  public static final class Contacts {
+  public static Map<String, Object> getContacts() throws Exception {
 
-    public static final URL email = new URL("xor_boole@mit.edu");
+    Map<String, Object> contacts = new HashMap<>();
 
-    public final static URL github = github("drXor");
+    contacts.put("email",  new URL("xor_boole@mit.edu"));
 
-    public final static String[] irc = { "#think", "irc.spi.gt" };
+    contacts.put("github", toGithub("drXor"));
 
+    contacts.put("irc",    new String[] { "#think", "irc.spi.gt" });
+
+    return contacts;
   }
 
   public static final class Projects {
@@ -62,7 +66,7 @@ public final class Homepage {
 
       @Override
       public static URL getURL() throws Exception {
-        return URL url = "drXor/1.8-Models";
+        return toGithub("drXor/1.8-Models");
       }
 
       @Override 
@@ -82,7 +86,7 @@ public final class Homepage {
 
         @Override
         public static URL getURL() throws Exception {
-          return URL url = "drXor/ScalaNBT";
+          return toGithub("drXor/ScalaNBT");
         }
 
         @Override 
@@ -101,7 +105,7 @@ public final class Homepage {
 
       @Override
       public static URL getURL() throws Exception {
-        return new URL("drXor/ScalaNBT");
+        return toGithub("drXor/ScalaNBT");
       }
 
       @Override 
@@ -122,7 +126,7 @@ public final class Homepage {
 
       @Override
       public static URL getURL() throws Exception {
-        return new URL("drXor/brainscala");
+        return toGithub("drXor/brainscala");
       }
 
       @Override 
@@ -138,13 +142,14 @@ public final class Homepage {
     public static final class Pictures implements Project {
 
       /**
-       *  Scala-based interpreter and compiler for the
-       *  brainf--k language.
+       *  School project at MIT that creates
+       *  "word art" from images and text fetched
+       *  using Wikipedia's API
        */
 
       @Override
       public static URL getURL() throws Exception {
-        return new URL("drXor/Pictures");
+        return toGithub("drXor/Pictures");
       }
 
       @Override 

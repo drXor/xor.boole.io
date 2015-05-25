@@ -2,15 +2,16 @@
 
 from io.boole.xor.homepage import *
 
-contacts = {
+def contacts():
+  return {
 
-  'email': url('xor_boole@mit.edu'),
+    'email':  url('xor_boole@mit.edu'),
 
-  'github': url.gh('drXor'),
+    'github': url.gh('drXor'),
 
-  'irc': ('#think', 'irc.spi.gt')
+    'irc':    ('#think', 'irc.spi.gt')
 
-}
+  }
 
 projects = {
 
@@ -80,7 +81,7 @@ projects = {
     (Named Binary Tag) files, with simple syntax
     """
 
-    url = url.gh('drXor/ScalaNBT'),
+    url: url.gh('drXor/ScalaNBT'),
 
     skills: [
       'library design',

@@ -1,15 +1,14 @@
 package io.boole.xor.homepage
 import homepage.util._
 
-object Contacts {
+def contacts = Map(
 
-  val email = "xor_boole@mit.edu".url
+  "email"  -> "xor_boole@mit.edu".url
 
-  val github = "drXor".github
+  "github" -> "drXor".github
 
-  val irc = "#think" -> "irc.spi.gt"
-
-}
+  "irc"    -> ("#think" -> "irc.spi.gt")
+)
 
 package projects {
 
@@ -27,22 +26,20 @@ package projects {
      *  infrastructure, design of features, and 
      *  communicating with third-party developers.
      */
-    val position = "Lead Developer" &amp; "Founder"
+    val position = "Lead Developer" :: "Founder" :: Nil
 
-    val skills = List(
-      "Java server-side development",
-      "server distribution and communication",
-      "gameplay design"
-    )
+    val skills = 
+      "Java server-side development" ::
+      "server distribution and communication" ::
+      "gameplay design" :: Nil
     /**
      * Major infrastructure components I designed
      */
-    val subprojects = List(
-      "intra-network RMI using messages",
-      "modified world format for custom storage",
-      "custom in-game GUI framework",
-      "persistent item metadata"
-    )
+    val subprojects = 
+      "intra-network RMI using messages" ::
+      "modified world format for custom storage" ::
+      "custom in-game GUI framework" ::
+      "persistent item metadata" :: Nil
   }
 
   object Minecraft3DResourcePack extends Project {
@@ -54,10 +51,9 @@ package projects {
 
     val url = "drXor/1.8-Models".github
 
-    val skills = List(
-     "texture design" using "GIMP",
-     "simple modeling" using "Minecraft JSON model format"
-    )
+    val skills = 
+     "texture design" using "GIMP" ::
+     "simple modeling" using "Minecraft JSON model format" :: Nil
 
     object ScalaModelTools extends Project {
 
@@ -68,9 +64,7 @@ package projects {
 
       val url = "drXor/ScalaModelTools".github
 
-      val skills = List(
-        "3D geometry transformation"
-      )
+      val skills = "3D geometry transformation" :: Nil
     }
   }
 
@@ -83,10 +77,9 @@ package projects {
 
     val url = "drXor/ScalaNBT".github
 
-    val skills = List(
-      "library design",
-      "NBT manipulation"
-    )
+    val skills = 
+      "library design" ::
+      "NBT manipulation" :: Nil
   }
 
   object brainscala extends Project {
@@ -98,11 +91,10 @@ package projects {
 
     val url = "drXor/brainscala".github
 
-    val skills = List(
-      "language parsing",
-      "code generation",
-      "JNI", "C"
-    )
+    val skills = 
+      "language parsing" ::
+      "code generation" ::
+      "JNI" :: "C" :: Nil
   }
 
   object Pictures extends Project {
@@ -115,10 +107,9 @@ package projects {
 
     val url = "drXor/Pictures".github
 
-    val skills = List(
-      "Wikipedia API",
-      "Java Swing",
-      "image processing"
-    )
+    val skills = 
+      "Wikipedia API" ::
+      "Java Swing" ::
+      "image processing" :: Nil
   }
 }

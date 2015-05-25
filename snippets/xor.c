@@ -1,13 +1,15 @@
 #include "io/boole/xor/homepage.h"
-    
-Contacts cons = {
 
-    .email = url->new("xor_boole@mit.edu"),
+Contacts get_contacts() {
 
-    .github = url->gh("drXor"),
+    return (Contacts) {
+        .email = url->new("xor_boole@mit.edu"),
 
-    .irc = { "#think", "irc.spi.gt" }
-};
+        .github = url->gh("drXor"),
+
+        .irc = { "#think", "irc.spi.gt" }
+    }   
+}
 
 Project projects[] = {
 
@@ -45,7 +47,6 @@ Project projects[] = {
 
         .url = url->gh("drXor/1.8-Models"),
 
-
         .skills = {
             "texture design", "GIMP",
             "simple modeling", "Minecraft JSON model format"
@@ -59,7 +60,6 @@ Project projects[] = {
 
                 .url = url->gh("drXor/ScalaModelTools"),
 
-
                 .skills = { "3D geometry transformation" }
             }
         }
@@ -71,7 +71,6 @@ Project projects[] = {
         .name = "ScalaNBT",
 
         .url = url->gh("drXor/ScalaNBT"),
-
 
         .skills = {
             "library design",
@@ -85,7 +84,6 @@ Project projects[] = {
         .name = "brainscala",
 
         .url = url->gh("drXor/brainscala"),
-
 
         .skills = {
             "language parsing",
@@ -102,7 +100,6 @@ Project projects[] = {
         .name = "Pictures",
 
         .url = url->gh("drXor/Pictures"),
-
 
         .skills = {
             "Wikipedia API",
