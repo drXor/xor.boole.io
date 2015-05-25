@@ -11,13 +11,23 @@ body {
 
 p {
     font-family: Tahoma, Helvetica, sans-serif;
-    font-size: 20;
+}
+
+p.intro {
+    hyphens: auto;
+    font-size: 20px;
+}
+
+p.credits {
+    font-size: 10px;
+    color: #909090;
+    text-align: center;
 }
 
 div.intro {
     text-align: justify;
-    margin-left: 15em;
-    margin-right: 15em;
+    margin-left: 150px;
+    margin-right: 150px;
     line-height: 2em;
     margin-bottom: 0em;
 }
@@ -45,8 +55,26 @@ hr {
     margin-right: -10px;
 }
 
+hr.top {
+    margin-bottom: 15px;
+}
+hr.bottom {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+pre code {
+    padding: 300px;
+}
+
 code {
-    margin: 50px;
+    display: block;
+}
+
+code.hljs {
+    display: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
     margin-left: 100px;
     margin-right: 100px;
     font-size: 0.8em;
@@ -55,10 +83,15 @@ code {
     border-radius: 30px;
     -webkit-border-radius: 30;
     -moz-border-radius: 30;
+    padding: 30px;
 }
 
 a {
     text-decoration: none;
+    color: inherit;
+}
+
+a.code {
     color: #000000;
 }
 
@@ -67,12 +100,18 @@ a:hover {
 }
 
 div#buttons {
-    text-align: center;
-    margin-bottom: -60px;
+
+    display: inline-block;    
+    background: #c0c0c0;
+    padding: 10px 4px 10px 4px;
+    -webkit-border-radius: 4;
+    -moz-border-radius: 4;
+    border-radius: 4px;
 }
 
 codebutton {
 
+    float: center;
     -webkit-border-radius: 4;
     -moz-border-radius: 4;
     border-radius: 4px;
@@ -82,7 +121,9 @@ codebutton {
     font-size: 16px;
     background: #999999;
     padding: 6px 10px 6px 10px;
+
     text-decoration: none;
+    z-index: -2;
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
