@@ -1,11 +1,11 @@
 package io.boole.xor.homepage
 import homepage.util._
 
-def contacts = Map(
+def contacts: Map[String, Any] = Map(
 
-  "email"  -> "xor_boole@mit.edu".url
+  "email"  -> "xor_boole@mit.edu".url,
 
-  "github" -> "drXor".github
+  "github" -> "drXor".github,
 
   "irc"    -> ("#think" -> "irc.spi.gt")
 )

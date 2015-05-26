@@ -92,11 +92,17 @@ a {
 }
 
 a.code {
-    color: #000000;
+    text-decoration: underline;
+    color: #a8a8a8; 
 }
 
 a:hover {
     text-decoration: underline;
+
+}
+
+a.code:hover {
+    color: #888888; 
 }
 
 div#buttons {

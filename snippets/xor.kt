@@ -1,14 +1,14 @@
 package io.boole.xor.homepage
 import homepage.util.*
 
-fun getContacts(): Map<String, Any> = mapOf(
+fun getContacts(): Map<String, Any> = mapOf()
 
   "email"  to "xor_boole@mit.edu".asUrl(),
 
-  "github" to "drXor".asGithub()
+  "github" to "drXor".asGithub(),
 
   "irc"    to ("#think" to "irc.spi.gt")
-)
+()
 
 object projects {
 

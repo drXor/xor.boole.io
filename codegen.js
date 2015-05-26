@@ -14,7 +14,6 @@ var snippets = {};
 $('#nullcode').each(function(i, block) { hljs.highlightBlock(block); });
 
 $(function() {
-    var count = 1;
     for(lang in langs) {
         var button = $('<codebutton>', {
             type: 'button', 
@@ -24,9 +23,6 @@ $(function() {
         button.click(handleCode);
         var $buttons = $('#buttons')
         $buttons.append(button).append(' ')
-        //if(count % 4 == 0)
-        //    $buttons.append($('<br><br>'));
-        count++;
     }
     $('#scalabutton').click();
 });
@@ -42,9 +38,22 @@ function doRequest(language, hide) {
 
             var src = s;
             src = src
-               .replace(/(\n[ ]*)(.+["'](.+?@.+?\..+?)["'].+)([ ]*\n)/g, '$1<a href="mailto:$3" class="code">$2</a>$4')
-               .replace(/(\n[ ]*)(.+["']((?!irc)[a-zA-Z0-9\-]+?\..+?)["'].+)([ ]*\n)/g,  '$1<a href="http://$3" class="code">$2</a>$4')
-               .replace(/(\n[ ]*)(.+["'](drXor\/?.*?)["'].+)([ ]*\n)/g,   '$1<a href="http://github.com/$3" class="code">$2</a>$4');
+                .replace('&', '&amp;')
+                .replace('<', '&lt;')
+                .replace('>', '&gt;')
+                .replace(/(\n[ \t]*)(.+["'])(.+?@.+?\..+?)(["'].+)([ \t]*\n)/g, '$1$2<a href="mailto:$3" class="code">$3</a>$4$5')
+                .replace(/(\n[ \t]*)(.+["'])((?!irc)[a-zA-Z0-9\-]+?\..+?)(["'].+)([ \t]*\n)/g,  '$1$2<a href="http://$3" class="code">$3</a>$4$5')
+                .replace(/(\n[ \t]*)(.+["'])(drXor\/?.*?)(["'].+)([ \t]*\n)/g,   '$1$2<a href="http://github.com/$3" class="code">$3</a>$4$5');
+
+            // this exists to and only to make hljs not make
+            // my valid kotlin look invalid
+            // I dilike this hack as much as you do.
+            if(this.lang === 'kotlin') {
+                src = src
+                    .replace('\n()', '\n<ktfix class="parens">()</ktfix>')
+                    .replace('mapOf()', 'mapOf<ktfix class="map">()</ktfix>');
+
+            }
 
             snippets[this.lang] = src;
 
@@ -66,6 +75,12 @@ function doRequest(language, hide) {
             $('#nullcode').css('display', 'none');
             
             code.each(function(i, block) { hljs.highlightBlock(block); });
+
+            // kotling fix contiuned
+            if(this.lang === 'kotlin') {
+                code.children('ktfix.parens').text(')');
+                code.children('ktfix.map').text('(');
+            }
 
             $('codes').after(precode).append('\n');
         }
