@@ -93,16 +93,14 @@ a {
 
 a.code {
     text-decoration: underline;
-    color: #a8a8a8; 
 }
 
 a:hover {
     text-decoration: underline;
-
 }
 
-a.code:hover {
-    color: #888888; 
+a:hover.code {
+    /* dealt with elsewhere */
 }
 
 div#buttons {

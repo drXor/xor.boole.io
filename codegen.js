@@ -40,18 +40,15 @@ function doRequest(language, hide) {
             src = src
                 .replace('&', '&amp;')
                 .replace('<', '&lt;')
-                .replace('>', '&gt;')
-                .replace(/(\n[ \t]*)(.+["'])(.+?@.+?\..+?)(["'].+)([ \t]*\n)/g, '$1$2<a href="mailto:$3" class="code">$3</a>$4$5')
-                .replace(/(\n[ \t]*)(.+["'])((?!irc)[a-zA-Z0-9\-]+?\..+?)(["'].+)([ \t]*\n)/g,  '$1$2<a href="http://$3" class="code">$3</a>$4$5')
-                .replace(/(\n[ \t]*)(.+["'])(drXor\/?.*?)(["'].+)([ \t]*\n)/g,   '$1$2<a href="http://github.com/$3" class="code">$3</a>$4$5');
+                .replace('>', '&gt;');
 
             // this exists to and only to make hljs not make
             // my valid kotlin look invalid
             // I dilike this hack as much as you do.
             if(this.lang === 'kotlin') {
                 src = src
-                    .replace('\n()', '\n<ktfix class="parens">()</ktfix>')
-                    .replace('mapOf()', 'mapOf<ktfix class="map">()</ktfix>');
+                    .replace('\n()', '\n<ktfix id="parens">()</ktfix>')
+                    .replace('mapOf()', 'mapOf<ktfix id="map">()</ktfix>');
 
             }
 
@@ -61,10 +58,6 @@ function doRequest(language, hide) {
                 'class': this.lang,
                 id: this.lang + 'code'
             }).append(src);
-
-            var precode = $('<pre>', {
-                
-            }).append(code);
 
             if(this.hide) {
                 code.css('display', 'none');
@@ -76,11 +69,21 @@ function doRequest(language, hide) {
             
             code.each(function(i, block) { hljs.highlightBlock(block); });
 
-            // kotling fix contiuned
+            // kotlin fix contiuned
             if(this.lang === 'kotlin') {
-                code.children('ktfix.parens').text(')');
-                code.children('ktfix.map').text('(');
+                code.children('ktfix#parens').text(')');
+                code.children('ktfix#map').text('(');
             }
+
+            src = code.html();
+
+            // yes I'm aware this is horrible
+            src = src
+                .replace(/(\n[ \t]*)(.+["'])(.+?@.+?\..+?)(["'].+)([ \t]*\n)/g, '$1$2<a href="mailto:$3" class="code">$3</a>$4$5')
+                .replace(/(\n[ \t]*)(.+["'])((?!irc)[a-zA-Z0-9\-]+?\..+?)(["'].+)([ \t]*\n)/g,  '$1$2<a href="http://$3" class="code">$3</a>$4$5')
+                .replace(/(\n[ \t]*)(.+["'])(drXor\/?.*?)(["'].+)([ \t]*\n)/g,   '$1$2<a href="http://github.com/$3" class="code">$3</a>$4$5');
+
+            var precode = $('<pre>').append(code.empty().append(src));
 
             $('codes').after(precode).append('\n');
         }
