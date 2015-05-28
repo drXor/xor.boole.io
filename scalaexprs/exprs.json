@@ -1,0 +1,31 @@
+[
+    {
+        "name": "Iota",
+        "about": "`iota` from golang.",
+        "source": ["Iota.scala", "examples/IotaExample.scala"]
+    },
+
+    {
+        "name": "Caught",
+        "about": "Turns `try ... catch` into an `Either` method.",
+        "source": ["Caught.scala", "examples/CaughtExample.scala"]
+    },
+
+    {
+        "name": "SelfSeq",
+        "about": "A `Seq` that contains itself.",
+        "source": "SelfSeq.scala"
+    },
+
+    {
+        "name": "Elvis",
+        "about": "Kotlin `?.` and `?:` operators.",
+        "source": "Elvis.scala"
+    },
+
+    {
+        "name": "Alloc",
+        "about": "`alloc` keyword for allocating objects.",
+        "source": ["Alloc.scala", "examples/AllocExample.scala"]
+    }
+]

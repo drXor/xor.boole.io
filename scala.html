@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html>
   <head>
-    <title>Xor Boole</title>
+    <title>Scala Experiments</title>
     <link rel="shortcut icon" href="http://xor.boole.io/headbw.png"></link>
     <link type="text/css" rel="stylesheet" href="style.css">
-    <link type="text/css" rel="stylesheet" href="mainnav.css">
+    <link type="text/css" rel="stylesheet" href="scalanav.css">
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/highlight.js/8.6/styles/github.min.css">
     <script src="highlight.pack.js"></script>
@@ -12,31 +12,33 @@
   </head>
   <body>
     <div class="intro">
-      <center><h1 class="title">xor.boole.io</h1></center>
+      <center><h1 class="title">Scala Experiments</h1></center>
       <p class="intro">
-        Hi! My name is Miguel Young. I'm currently an undergrad at the Massachusetts Institute of Technology, 
-        studying theoretical mathematics, class of 2018. I'm also interested in computer programming and 
-        server administration, and enjoy experimenting with language design and extension, particularly in
-        <a href="http://xor.boole.io/scala">Scala</a>. I also contribute to open source projects related to the game Minecraft.
+        I enjoy language design, and Scala is an excellent language for
+        experimenting with feature ideas, or reimplementing features
+        from other langauges in scala.
       </p>
     </div>
-    <hr class="top">
-    <center><div id="buttons">
-    </div></center>
+    <hr>
+    <center>
+    <div><leftexprbutton></leftexprbutton><span id="exprname">Loading...</span><rightexprbutton></rightexprbutton></div>
+    <div><p id="inspiration"></p></div>
+    </center>
+    <div><p id="about"></p></div>
     <codes></codes>
-    <!-- this is here to make it load faster. -->
-    <pre><code id="nullcode" style="display:block;">
+
+    <div id="nullcode"><pre><code style="display:block;">
       &#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;
       &#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;
       &#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;
       &#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;
       &#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;
-    </code></pre>
-    <script type="text/javascript" src="http://xor.boole.io/codegen.js"></script>
+    </code></pre></div>
+    <script src="buildscalagists.js"></script>
     <hr class="bottom">
     <p class="credits">
       Designed with frustration by Xor Boole. <a href="https://github.com/drXor/xor.boole.io">drXor/xor.boole.io</a>
-    <p>
+    </p>
     <center><img src="headbw.png" align="middle"/></center>
   </body>
 </html>
